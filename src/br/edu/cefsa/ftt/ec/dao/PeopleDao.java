@@ -8,9 +8,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import br.edu.cefsa.ftt.ec.model.People;
-import br.edu.cefsa.ftt.util.DbUtil;
+import br.edu.cefsa.ftt.ec.util.DbUtil;
 
-public class PeopleDao extends Dao {
+public class PeopleDao implements Dao {
 
     private Connection connection;
 

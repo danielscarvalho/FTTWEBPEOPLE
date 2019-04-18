@@ -1,5 +1,7 @@
 package br.edu.cefsa.ftt.ec.model;
 
+//JavaBean - POJO
+
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -99,7 +101,7 @@ public class People implements Serializable  {
 		//formato: 2018-09-20 mascara yyyy-MM-dd
 		//formato: 20/09/2018 mascara dd/MM/yyyy
 		//referencia: https://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd"); 
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); 
 
 		try { 
 			this.dob = formatter.parse(dob);
