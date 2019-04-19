@@ -15,7 +15,15 @@ public class PeopleDao implements Dao {
     private Connection connection;
 
     public PeopleDao() {
-        connection = DbUtil.getConnection();
+    	
+        try {
+			connection = DbUtil.getConnection();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new ArithmeticException("PeopleDao: DB Connect: " + e.getMessage());
+		}
+    
     } //PeopleDao
 
     public void addPeople(People people) {

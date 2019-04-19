@@ -8,11 +8,11 @@ public class DbUtil {
 
     private static Connection connection = null;
 
-    public static Connection getConnection() {
-        if (connection != null)
+    public static Connection getConnection() throws Exception {
+       
+    	if (connection != null)
             return connection;
         else {
-            try {
 
                 String driver = "com.mysql.jdbc.Driver";
                 String url = "jdbc:mysql://localhost:3306/FTT";
@@ -25,15 +25,7 @@ public class DbUtil {
                 
                 connection.setAutoCommit(true);
             
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            /*} catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();*/
-            }
+            
             return connection;
         }
 

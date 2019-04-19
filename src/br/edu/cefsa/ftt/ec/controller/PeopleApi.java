@@ -22,7 +22,9 @@ import br.edu.cefsa.ftt.ec.model.People;
 public class PeopleApi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private ArrayList<People> peopleData = new ArrayList<People>(); //Pode remover...
+	PeopleDao pd;
+	
+	//private ArrayList<People> peopleData = new ArrayList<People>(); //Pode remover...
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -75,14 +77,20 @@ public class PeopleApi extends HttpServlet {
 		
 		System.out.print(p);
 		
-		PeopleDao pd = new PeopleDao();
+		
+		
 		
 		String status = "OK";
 		String message = "People data saved!";
 		String now = String.valueOf(new Date());
 		
 		try {
+		   
+		   if (pd == null)
+			   pd = new PeopleDao();	
+		   
 		   pd.addPeople(p);
+		
 		} catch (Exception e) {
 			status = "Error";
 			message = e.getMessage();
