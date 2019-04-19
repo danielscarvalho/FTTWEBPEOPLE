@@ -62,7 +62,6 @@ public class People implements Serializable  {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public Long getId() {
 		return this.id;
 	}
@@ -101,8 +100,15 @@ public class People implements Serializable  {
 		//formato: 2018-09-20 mascara yyyy-MM-dd
 		//formato: 20/09/2018 mascara dd/MM/yyyy
 		//referencia: https://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); 
-
+		String dataPattern;
+		
+		if(dob.indexOf("-") > 0)
+			dataPattern = "yyyy-MM-dd"; 
+		else
+			dataPattern = "dd/MM/yyyy"; 
+		
+		SimpleDateFormat formatter = new SimpleDateFormat(dataPattern);
+		
 		try { 
 			this.dob = formatter.parse(dob);
 		} catch (Exception e) {
