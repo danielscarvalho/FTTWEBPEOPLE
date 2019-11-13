@@ -25,3 +25,9 @@
 - Driver JDBC MySQL:
 - Git
 - Linux (ou Mac ou Windows)
+
+## Dev Tools:
+
+- MySQL Workbanch
+- Postman
+
